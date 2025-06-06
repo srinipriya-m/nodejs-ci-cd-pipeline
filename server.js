@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/users");
+const movieRoutes = require("./routes/movies");
 const errorHandler = require("./middlewares/error");
 
 
@@ -27,6 +28,8 @@ app.use("/api/products", (req, res) => {
     message: 'This is new feature change, a new route for products'
   })
 });
+
+app.use("/api/movies", movieRoutes);
 
 app.use(errorHandler);
 
